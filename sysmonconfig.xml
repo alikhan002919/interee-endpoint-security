@@ -1,0 +1,15 @@
+<Sysmon schemaversion="4.22">
+  <HashAlgorithms>md5,sha256</HashAlgorithms>
+  <EventFiltering>
+    <ProcessCreate onmatch="include">
+      <CommandLine condition="contains">powershell</CommandLine>
+      <Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Image>
+    </ProcessCreate>
+    <FileCreateTime onmatch="include"/>
+    <FileCreate onmatch="include"/>
+    <FileDelete onmatch="include"/>
+    <FileDeleteDetected onmatch="include"/>
+    <DriverLoad onmatch="include"/>
+    <NetworkConnect onmatch="include"/>
+  </EventFiltering>
+</Sysmon>
